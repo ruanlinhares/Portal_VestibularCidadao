@@ -17,11 +17,11 @@ async def listar_aluno():
     return [await AlunoRead.model_validate(aluno) for aluno in alunos]
 
 @router.get("/{aluno_id}", response_model=AlunoRead )
-async def obter_aluno(aluno_id: int):
+async def procurar_aluno(aluno_id: int):
     aluno = await Aluno.get_or_none(id=aluno_id)
     if not aluno:
         raise HTTPException(404, "Aluno nao encontrado")
-        return await AlunoRead.model_validate(aluno)
+    return await AlunoRead.model_validate(aluno)
 
 @router.put("/{aluno_id}", response_model=AlunoRead )
 async def atualizar_aluno(aluno_id: int, payload: AlunoUpdate):

@@ -2,9 +2,9 @@
 from fastapi import APIRouter, HTTPException
 from typing import List
 
-from backend.app.api.endpoints.alunos import router
-from backend.app.models import Notas, Aluno
-from backend.app.schemas import NotaCreate, NotaRead, NotaUpdate
+from app.api.endpoints.User import router
+from app.models import Notas, User
+from app.schemas import NotaCreate, NotaRead, NotaUpdate
 
 router = APIRouter()
 

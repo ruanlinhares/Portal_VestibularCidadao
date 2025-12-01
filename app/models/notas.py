@@ -3,7 +3,7 @@ from tortoise.models import Model
 
 class Notas(Model):
     id = f.IntField(primary_key=True)
-    aluno = f.ForeignKeyField("models.Aluno", related_name="notas", description = "Aluno a qual pertence a nota")
+    aluno = f.ForeignKeyField("models.User", related_name="notas", description = "Aluno a qual pertence a nota")
     alunoNota = f.FloatField()
 
     class Meta:

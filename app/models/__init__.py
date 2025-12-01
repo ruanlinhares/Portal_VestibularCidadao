@@ -1,4 +1,4 @@
-from .Notas import Notas
-from .User import User
+from .notas import Notas
+from .user import User
 
 __all__ = ["Notas", "User"]

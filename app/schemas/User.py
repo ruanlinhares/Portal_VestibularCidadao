@@ -21,4 +21,7 @@ class ListUserDTO(BaseModel):
     userName : str
     userEmail : str
     userPhone : str
+
+    class Config():
+        from_attributes = True
     

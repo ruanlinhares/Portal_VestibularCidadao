@@ -10,7 +10,7 @@ app.include_router(api_router, prefix="/api")
 register_tortoise(
     app,
     db_url="mysql://root:root@localhost:3306/baseVC",
-    modules={"models": ["app.models.Aluno", "app.models.Notas", "app.models.Professor"]},
+    modules={"models": ["app.models.user", "app.models.notas"]},
     generate_schemas=True,
     add_exception_handlers=True,
 )

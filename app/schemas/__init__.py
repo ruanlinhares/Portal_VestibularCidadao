@@ -1,16 +1,12 @@
-from .aluno import AlunoCreate, AlunoRead, AlunoUpdate  
-from .professor import ProfessorCreate, ProfessorRead, ProfessorUpdate
-from .nota import NotaCreate, NotaRead, NotaUpdate
+from .Notas import NotaCreate, NotaRead, NotaUpdate
+from .User import CreateUserDTO, ListUserDTO, UpdateUserDTO
 
 __all__ = [
-    "AlunoCreate",
-    "AlunoRead",
-    "AlunoUpdate",
-    "ProfessorCreate",
-    "ProfessorRead",
-    "ProfessorUpdate",
     "NotaCreate",
     "NotaRead",
     "NotaUpdate",
+    "CreateUserDTO",
+    "ListUserDTO",
+    "UpdateUserDTO"
 
 ]

@@ -1,8 +1,6 @@
 
 from fastapi import APIRouter, HTTPException
 from typing import List
-
-from app.api.endpoints.User import router
 from app.models import Notas, User
 from app.schemas import NotaCreate, NotaRead, NotaUpdate
 

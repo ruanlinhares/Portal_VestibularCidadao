@@ -8,12 +8,12 @@ router = APIRouter()
 
 @router.post("/", response_model=NotaRead, status_code=201)
 async def atribuir_nota(payload: NotaCreate):
-    aluno = await Aluno.get_or_none(id=payload.alunoId)
-    if not aluno:
-        raise HTTPException(404, "Aluno nao encontrado")
+    user = await User.get_or_none(id=payload.userId)
+    if not user:
+        raise HTTPException(404, "Usuario nao encontrado")
     nota = await Notas.create(
-        alunoId=payload.alunoId,
-        alunoNota=payload.alunoNota
+        userId=payload.userId,
+        userNota=payload.userNota
     )
     return await NotaRead.model_validate(nota)
 

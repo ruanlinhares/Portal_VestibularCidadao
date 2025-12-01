@@ -36,12 +36,12 @@ async def search_user(user_id: int):
 
 @router.put("/update/{user_id}", response_model=ListUserDTO )
 async def update_user(user_id: int, payload: UpdateUserDTO):
-    user = await User.get_or_none(id=auser_id)
+    user = await User.get_or_none(id=user_id)
     if not user:
         raise HTTPException(404, "Aluno nao encontrado")
     await user.update_from_dict(payload.model_dump(exclude_unset=True))
     await user.save()
-    return await ListUserDTO.model_validate(aluno)
+    return await ListUserDTO.model_validate(user)
 
 @router.delete("/delete/{user_id}", status_code=204)
 async def delete_user(user_id:int):

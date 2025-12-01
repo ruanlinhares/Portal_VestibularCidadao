@@ -2,8 +2,8 @@ from pydantic import BaseModel
 from typing import Optional
 
 class NotaBase(BaseModel):
-    alunoId: int
-    alunoNota: float
+    userId: int
+    userNota: float
 
 class NotaCreate(NotaBase):
     pass

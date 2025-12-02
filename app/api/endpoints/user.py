@@ -12,12 +12,14 @@ async def criar_user(payload: CreateUserDTO):
     
     if existing:
         raise HTTPException(status_code=400, detail="Email já cadastrado")
+    
+    hashed_password = User.hash_password(payload.userPassword)
 
     user = await User.create(
         userName=payload.userName,
         userEmail=payload.userEmail,
         userPhone=payload.userPhone,
-        userPassword=payload.userPassword,
+        userPassword=hashed_password,
     )
 
     return ListUserDTO.from_orm(user)
